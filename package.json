@@ -1,7 +1,11 @@
 {
   "name": "@yao-react/react-memo",
-  "description": "React memorization with render children pattern.",
   "version": "0.1.0",
+  "description": "React memorization with render children pattern.",
+  "keywords": [
+    "react",
+    "memo"
+  ],
   "main": "dist/index.js",
   "module": "dist/react-memo.esm.js",
   "typings": "dist/index.d.ts",

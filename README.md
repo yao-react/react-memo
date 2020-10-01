@@ -1,4 +1,4 @@
-# @yao-react/memo
+# @yao-react/react-memo
 
 React memorization with render children pattern.
 
