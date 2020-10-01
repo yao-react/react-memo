@@ -3,6 +3,4 @@
 node_modules
 .cache
 dist
-
-# custom
-/.idea/
+.idea

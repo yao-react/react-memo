@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import * as React from 'react';
+import { useState } from 'react';
 import { Memo } from '../src';
 
 export default {
@@ -14,6 +15,7 @@ export const Default = () => {
     <div>
       <div>
         <button onClick={() => void setCount1(x => x + 1)}>inc count1</button>
+        <span> </span>
         <button onClick={() => void setCount2(x => x + 1)}>inc count2</button>
       </div>
       <div>

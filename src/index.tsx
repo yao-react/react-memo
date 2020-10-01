@@ -1,5 +1,1 @@
-import Memo from './Memo';
-
-export { Memo };
-
-export default Memo;
+export { Memo } from './Memo';

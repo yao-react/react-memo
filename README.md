@@ -1,34 +1,37 @@
-# React Memo Component
+# @yao-react/memo
 
 React memorization with render children pattern.
 
 ## Install
 
-```bash
-npm install --save react-memo-component
+```
+npm install @yao-react/react-memo
+```
+
+```
+yarn add @yao-react/react-memo
 ```
 
 ## Usage
 
 ```tsx
-import Memo from "react-memo-component";
-// import { Memo } from "react-memo-component"; // or
+import { Memo } from '@yao-react/react-memo'
 
-<Memo
-  deps={[dep1, dep2, ...]}
-  render={([dep1, dep2, ...]) => <div>...</div>}
-/>
+const Demo = () => {
+  return <Memo
+    deps={[dep1, dep2, ...]}
+    render={([dep1, dep2, ...]) => <div>...</div>}
+  />
+}
 ```
 
 ## Props
 
-- deps?: any
-  > Any deps of the component, common format is an array of items.
-- compare?: (prevDeps, nextDeps) => boolean
-  > Function used to compare the deps. If snapshots of deps are different, rerender will be triggered.
-  > By default, shallow-equal algorithm will be used if `compare` is not specified.
-- render?: (deps) => ReactElement
-- children?: (deps) => ReactElement
+| prop    | type                             | required | description                                                    |
+| ------- | -------------------------------- | -------- | -------------------------------------------------------------- |
+| deps    | Array \| any                     | false    | Any deps of the component, common format is an array of items. |
+| compare | (prevDeps, nextDeps) => boolean  | false    | `shallowequal` is used if not provided                         |
+| render  | (deps) => (ReactElement \| null) | false    |                                                                |
 
 ## Advanced Usage
 
@@ -36,8 +39,8 @@ import Memo from "react-memo-component";
 
 You can use hooks inside the render function, which allows you to further optimize your render structure.
 
-If your lint complains about it, you can write your render function as `function Comp() {...}`, which fools the lint to 
-see it as a component, but you should know it is not, as it is only a normal function called inside the Memo component.  
+If your lint complains about it, you can write your render function as `function Comp() {...}`, which fools the lint to
+see it as a component, but you should know it is not indeed, as it is only a normal function called inside the Memo component.
 
 ## License
 

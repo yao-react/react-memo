@@ -1,9 +1,9 @@
 {
-  "name": "react-memo-component",
+  "name": "@yao-react/react-memo",
   "description": "React memorization with render children pattern.",
-  "version": "0.1.2",
-  "module": "dist/react-memo-component.esm.js",
+  "version": "0.0.0",
   "main": "dist/index.js",
+  "module": "dist/react-memo.esm.js",
   "typings": "dist/index.d.ts",
   "license": "MIT",
   "publishConfig": {
@@ -15,7 +15,7 @@
   ],
   "author": "zhaoyao91",
   "repository": {
-    "url": "https://github.com/zhaoyao91/react-memo-component"
+    "url": "https://github.com/yao-react/react-memo"
   },
   "scripts": {
     "start": "tsdx watch",
@@ -24,8 +24,8 @@
     "lint": "tsdx lint",
     "fix": "tsdx lint --fix",
     "prepublishOnly": "tsdx build",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook:start": "start-storybook -p 6006",
+    "storybook:build": "build-storybook"
   },
   "husky": {
     "hooks": {
