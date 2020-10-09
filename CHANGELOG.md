@@ -1,5 +1,11 @@
 # @yao-react/react-memo
 
+## 0.1.2
+
+### Patch Changes
+
+- e664ea3: add useRender prop
+
 ## 0.1.1
 
 ### Patch Changes
