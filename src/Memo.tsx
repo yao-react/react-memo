@@ -1,13 +1,16 @@
 import { memo, ReactElement } from 'react';
 import equals from 'shallowequal';
 
+type RenderFunc<TDeps> = (deps: TDeps) => ReactElement | null;
+
 export type Props<TDeps> = {
   deps?: TDeps;
   compare?: (prevDeps: TDeps, nextDeps: TDeps) => boolean;
-  render?: (deps: TDeps) => ReactElement | null;
+  render?: RenderFunc<TDeps>;
+  useRender?: RenderFunc<TDeps>;
 };
 
-const compareProps = <TDeps extends any>(
+const compareProps = <TDeps,>(
   prevProps: Props<TDeps>,
   nextProps: Props<TDeps>
 ) => {
@@ -21,6 +24,11 @@ const compareProps = <TDeps extends any>(
 
 type MemoType = <TDeps>(props: Props<TDeps>) => ReactElement | null;
 
-export const Memo: MemoType = memo(function Memo({ deps, render }) {
-  return render?.(deps!) ?? null;
+export const Memo: MemoType = memo(function Memo({ deps, render, useRender }) {
+  const renderFunc = useRender ?? render ?? emptyRenderFunc;
+  return renderFunc(deps!);
 }, compareProps);
+
+function emptyRenderFunc() {
+  return null;
+}

@@ -27,20 +27,22 @@ const Demo = () => {
 
 ## Props
 
-| prop    | type                             | required | description                                                    |
-| ------- | -------------------------------- | -------- | -------------------------------------------------------------- |
-| deps    | Array \| any                     | false    | Any deps of the component, common format is an array of items. |
-| compare | (prevDeps, nextDeps) => boolean  | false    | `shallowequal` is used if not provided                         |
-| render  | (deps) => (ReactElement \| null) | false    |                                                                |
+| prop      | type                             | required | description                                                    |
+| --------- | -------------------------------- | -------- | -------------------------------------------------------------- |
+| deps      | Array \| any                     | false    | Any deps of the component, common format is an array of items. |
+| compare   | (prevDeps, nextDeps) => boolean  | false    | `shallowequal` is used if not provided                         |
+| render    | (deps) => (ReactElement \| null) | false    |                                                                |
+| useRender | (deps) => (ReactElement \| null) | false    | alias of `render`                                              |
 
 ## Advanced Usage
 
-### Use hooks inside render
+### Using hooks
 
-You can use hooks inside the render function, which allows you to further optimize your render structure.
+`useRender` is an alias of `render`, but exits here to indicate that you can use hooks inside it, which allows you to 
+further optimize your render structure.
 
-If your lint complains about it, you can write your render function as `function Comp() {...}`, which fools the lint to
-see it as a component, but you should know it is not indeed, as it is only a normal function called inside the Memo component.
+If your linter complains about it, you can give a name to your function, such as `function useRender() {...}`, which tells
+your linter that it is a hook.
 
 ## License
 

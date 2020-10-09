@@ -46,7 +46,7 @@ export const UseHooksInsideRender = () => {
   return (
     <Memo
       deps={[count1]}
-      render={() => {
+      useRender={() => {
         const [count2, setCount2] = useState(0);
         return (
           <div>
